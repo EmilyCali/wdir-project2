@@ -7,7 +7,8 @@ var Plant = require("./plants.js");
 //create schema
 
 var gardenSchema = new Schema({
-  gardener: {type: String, required: true, unique: true},
+  //gardener: {type: String, required: true, unique: true},
+  name: ({type: String, required: true, unique: true}),
   style: String,
   plants: [Plant.schema]
 });
