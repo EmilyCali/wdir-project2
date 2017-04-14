@@ -8,7 +8,14 @@ var Garden = require("../models/gardens.js");
 var Plant = require("../models/plants.js");
 
 //index route
-
+router.get("/", function(request, response) {
+  Garden.find({}, function(error, foundGardens){
+    console.log(error);
+    response.render("gardens/index.ejs", {
+      gardens: foundGardens
+    });
+  });
+});
 
 //get new
 
