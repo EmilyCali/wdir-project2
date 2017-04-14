@@ -24,6 +24,12 @@ router.get("/new", function(request, response) {
 
 
 //post new
+router.post("/", function(request, response) {
+  Garden.create(request.body, function(error, createdGarden) {
+    console.log(error);
+    response.redirect("/gardens");
+  });
+});
 
 
 
