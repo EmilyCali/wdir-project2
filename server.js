@@ -19,7 +19,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 //use stylesheet
 
 
+//require controllers
+var gardensController = require("./controllers/gardens.js");
+var plantsController = require("./controllers/plants.js");
 
+//use controllers
+app.use("/gardens", gardensController);
+app.use("/plants", plantsController);
 
 
 
