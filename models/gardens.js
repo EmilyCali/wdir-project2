@@ -10,6 +10,7 @@ var gardenSchema = new Schema({
   //gardener: {type: String, required: true, unique: true},
   name: ({type: String, required: true, unique: true}),
   style: String,
+  description: String,
   plants: [Plant.schema]
 });
 

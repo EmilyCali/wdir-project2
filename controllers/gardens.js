@@ -18,7 +18,9 @@ router.get("/", function(request, response) {
 });
 
 //get new
-
+router.get("/new", function(request, response) {
+  response.render("gardens/new.ejs");
+});
 
 
 //post new
