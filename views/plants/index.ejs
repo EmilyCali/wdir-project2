@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plants</title>
+  </head>
+  <body>
+
+    <header>
+      <h1> Plants Growing in the Gardens </h1>
+      <nav>
+        <a href="/">Home</a>
+        <br />
+        <a href="/plants/new"> Find a Plant </a>
+        <br />
+        <a href="/gardens"> Gardens </a>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <% for (var i = 0; i < plants.length; i++) {%>
+          <div>
+            <a href="/plants/<%=plants[i]._id%>"><img src="<%=plants[i].img%>"></a>
+          </div>
+        <%}%>
+      </div>
+    </main>
+  </body>
+</html>
