@@ -25,7 +25,10 @@ router.get("/new", function(request, response) {
 
 //post new
 router.post("/", function(request, response) {
-  response.render("plants/new.ejs");
+  Plant.create(request.body, function(error, createdPlant) {
+    console.log(error);
+    response.redirect("/plants");
+  });
 });
 
 
