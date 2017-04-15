@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Garden View</title>
+  </head>
+
+  <body>
+    <header>
+      <h1> What a Beautiful Garden </h1>
+      <nav>
+        <a href="/"> Home </a>
+        <br />
+        <a href="/gardens"> All Gardens </a>
+        <br />
+        <a href="/plants"> All Plants </a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2> <%=garden.name%> </h2>
+        <div>
+          <!-- shows all the images -->
+          <% for(var i = 0; i < garden.plants.length; i++){ %>
+            <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>">
+              <img src="<%=garden.plants[i].img%>"></a></div>
+        <% } %>
+        </div>
+        <h3> Style: <%=garden.style%> </h3>
+        <p> Description: <%=garden.description%> </p>
+      </section>
+
+      <section>
+        <a href="/gardens/<%=garden._id%>/edit">Alter the Garden</a>
+      </section>
+
+      <section>
+        <form action="/gardens/<%=garden._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Mow it down" />
+        </form>
+      </section>
+    </main>
+
+  </body>
+</html>

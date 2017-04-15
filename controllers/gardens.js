@@ -32,8 +32,15 @@ router.post("/", function(request, response) {
 });
 
 
-
 //show page
+router.get("/:id", function(request, response) {
+  Garden.findById(request.params.id, function(error, foundGarden) {
+    console.log(error);
+    response.render("gardens/show.ejs", {
+      garden: foundGarden
+    });
+  });
+});
 
 
 
