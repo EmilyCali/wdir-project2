@@ -7,7 +7,6 @@ var Plant = require("./plants.js");
 //create schema
 
 var gardenSchema = new Schema({
-  //gardener: {type: String, required: true, unique: true},
   name: ({type: String, required: true, unique: true}),
   style: String,
   description: String,
@@ -17,3 +16,6 @@ var gardenSchema = new Schema({
 var garden = mongoose.model("Garden", gardenSchema);
 
 module.exports = garden;
+
+
+//add gardener as user

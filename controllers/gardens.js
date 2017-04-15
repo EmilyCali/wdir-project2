@@ -53,28 +53,27 @@ router.get("/:id", function(request, response) {
 router.delete("/:id", function(request, response) {
   Garden.findByIdAndRemove(request.params.id, function(error, foundGarden) {
     //make place to push plants to
-    var plantIds = [];
+    //var plantIds = [];
     //for each plant in the garden
-    for (var i = 0; i < foundGarden.plants.length; i++) {
+    //for (var i = 0; i < foundGarden.plants.length; i++) {
       //put them into this array so they can be taken out
-      plantsIds.push(foundGarden.plants[i]._id);
-    }
+      //plantsIds.push(foundGarden.plants[i]._id);
+    //}
     //remove them from the original plants array
-    Plant.remove(
-      {
-        _id: {
-          $in: plantsIds
-        }
-      },
-      function(error, data) {
+    //Plant.remove(
+      //{
+        //_id: {
+          //$in: plantsIds
+        //}
+      //},
+      //function(error, data) {
         console.log(error);
         //go back to the index for gardens
         response.redirect("/gardens");
       }
     );
   });
-});
-
+//});
 
 
 //edit page
@@ -90,8 +89,12 @@ router.get("/:id/edit", function(request, response) {
 });
 
 
-
 //post edits
+router.put("/:id", function(request, response) {
+  Garden.findByIdAndUpdate(request.params.id, request.body, function() {
+    response.redirect("/gardens");
+  });
+});
 
 
 
