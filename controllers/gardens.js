@@ -78,6 +78,16 @@ router.delete("/:id", function(request, response) {
 
 
 //edit page
+router.get("/:id/edit", function(request, response) {
+  //enable the edit page to know which thing it is editing
+  Garden.findById(request.params.id, function(error, foundGarden) {
+    console.log(error);
+    //render the edit page
+    response.render("gardens/edit.ejs", {
+      garden: foundGarden
+    });
+  });
+});
 
 
 

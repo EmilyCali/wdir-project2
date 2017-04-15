@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Change a Garden</title>
+  </head>
+  <body>
+
+    <header>
+      <h1> Change Garden </h1>
+      <nav>
+        <a href="/"> Home </a>
+        <br />
+        <a href="/gardens"> Go Back </a>
+      </nav>
+    </header>
+
+    <main>
+      <form action="/gardens/<%=garden._id%>?_method=PUT" method="POST">
+        <label>Garden Name:</label> <input type="text" name="name" value="<%=garden.name%>" />
+        <br />
+        <label>Garden Style:</label> <input type="text" name="style" value="<%=garden.style%>" />
+        <br />
+        <label>Description:</label>
+        <!-- make this a textbox -->
+        <input type="text" name="description" value="<%=garden.description%>" />
+        <br />
+        <input type="submit" value="Alter the Land" />
+      </form>
+    </main>
+
+  </body>
+</html>
