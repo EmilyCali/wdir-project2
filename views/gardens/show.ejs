@@ -20,15 +20,21 @@
     <main>
       <section>
         <h2> <%=garden.name%> </h2>
+        <br />
         <div>
           <!-- shows all the images -->
           <% for(var i = 0; i < garden.plants.length; i++){ %>
             <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>">
-              <img src="<%=garden.plants[i].img%>"></a></div>
+              <!-- need to show images here, but these will be assets based on plants planted -->
+              </a>
+            </div>
         <% } %>
         </div>
-        <h3> Style: <%=garden.style%> </h3>
-        <p> Description: <%=garden.description%> </p>
+        <h3> Style </h3>
+        <p> <%=garden.style%> </p>
+        <br />
+        <h3> Description </h3>
+        <p> <%=garden.description%> </p>
       </section>
 
       <section>
