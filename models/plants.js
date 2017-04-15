@@ -6,7 +6,6 @@ var Garden = require("./gardens.js");
 
 //plant schema
 var plantSchema = new Schema({
-  gardener: {type: String, required: true},
   img: String, //need to make this required
   color: String,
   likes: [String], //sunlight shade water clay rocks
@@ -17,3 +16,6 @@ var plantSchema = new Schema({
 var Plant = mongoose.model("Plant", plantSchema);
 
 module.exports = Plant;
+
+
+//gardener: {type: String, required: true},

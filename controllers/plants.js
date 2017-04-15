@@ -18,11 +18,15 @@ router.get("/", function(request, response) {
 });
 
 //get new
-
+router.get("/new", function(request, response) {
+  response.render("plants/new.ejs");
+});
 
 
 //post new
-
+router.post("/", function(request, response) {
+  response.render("plants/new.ejs");
+});
 
 
 //show page

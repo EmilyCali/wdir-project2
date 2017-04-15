@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plant Something</title>
+  </head>
+  <body>
+
+    <header>
+      <h1> Put a Plant in the Ground!</h1>
+      <nav>
+        <a href="/"> Home </a>
+        <br />
+        <a href="/plants"> Go Back </a>
+      </nav>
+    </header>
+
+    <main>
+      <form action="/plants" method="POST">
+        <!-- you need to create a select for the images of the plants and for the gardens that they are going into -->
+        <!-- you also should do this for colors and only have a few available for each plant, use if statements to make this work -->
+        <br />
+        <label>Color:</label> <input type="text" name="color" placeholder="what color is your plant?" />
+        <br />
+        <label>Likes:</label> <input type="text" name="likes" placeholder="please seperate with commas" />
+        <br />
+        <label>Description:</label>
+        <!-- make this a textbox -->
+        <input type="text" name="description" placeholder="tell us about your garden" />
+        <br />
+        <!-- make this a checkbox? -->
+        <label>Type: </label>
+        <input type="text" name="type" placeholder="perrenial or annual?" />
+        <input type="submit" value="Put it in the Ground!" />
+      </form>
+    </main>
+
+  </body>
+</html>
