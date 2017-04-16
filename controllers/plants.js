@@ -54,10 +54,26 @@ router.delete("/:id", function(request, response) {
 
 
 //edit page
+router.get("/:id/edit", function(request, response) {
+  Plant.findById(request.params.id, function(error, foundPlant) {
+    console.log(error);
+    response.render("plants/edit.ejs", {
+      plant: foundPlant
+    });
+  });
+});
 
 
 
 //post edits
+router.put("/:id", function(request, response) {
+  Plant.findByIdAndUpdate(request.params.id, request.body, function(error, editedPlant) {
+    console.log(error);
+    response.redirect("/plants", {
+      plant: editedPlant
+    });
+  });
+});
 
 
 
