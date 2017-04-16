@@ -33,7 +33,14 @@ router.post("/", function(request, response) {
 
 
 //show page
-
+router.get("/:id", function(request, response) {
+  Plant.findById(request.params.id, function(error, foundPlant) {
+    console.log(error);
+    response.render("plants/show.ejs", {
+      plant: foundPlant
+    });
+  });
+});
 
 
 

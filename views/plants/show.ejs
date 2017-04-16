@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plant Info</title>
+  </head>
+  <body>
+
+    <header>
+      <h1> Take a Closer Look </h1>
+      <nav>
+        <a href="/"> Home </a>
+        <br />
+        <a href="/gardens"> All Gardens </a>
+        <br />
+        <a href="/plants"> All Plants </a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2> <%=plant.name%> </h2>
+        <br />
+        <!-- list garden this plant is in -->
+        <div> <img src="<%=plant.img%>"></div>
+        <br />
+        <h3> Color </h3>
+        <p> <%=plant.color%> </p>
+        <br />
+        <!-- look at pokemon to figure this out -->
+        <h3> Likes </h3>
+        <ul>
+          <% for (var i = 0; i < plant.likes.length; i++) {%> <li>
+            <%=plant.likes[i]%>
+          </li>
+          <%}%>
+        </ul>
+        <br />
+        <h3> Description </h3>
+        <p> <%=plant.description%> </p>
+        <br />
+        <h3> Type </h3>
+        <p> <%=plant.type%> </p>
+      </section>
+
+      <section>
+        <a href="/plants/<%=plant._id%>/edit"> Change the Plant</a>
+      </section>
+
+      <section>
+        <form action="/plants/<%=plant._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Pull it Up" />
+        </form>
+      </section>
+
+    </main>
+
+  </body>
+</html>
