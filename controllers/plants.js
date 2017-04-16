@@ -45,7 +45,12 @@ router.get("/:id", function(request, response) {
 
 
 //delete page
-
+router.delete("/:id", function(request, response) {
+  Plant.findByIdAndRemove(request.params.id, function(error) {
+    console.log(error);
+    response.redirect("/plants");
+  });
+});
 
 
 //edit page
