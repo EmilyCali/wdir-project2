@@ -9,6 +9,11 @@ var bodyParser = require("body-parser");
 //require method override
 var methodOverride = require("method-override");
 
+//declaration for using heroku or local express listener
+var port = process.env.PORT || 3000;
+
+
+var mongoDBURI = process.env.MONGODB_URI || "mongodb://localhost:27017/project2_gardens"
 
 
 //middleware
@@ -36,7 +41,7 @@ app.get("/", function(request, response) {
 
 
 //mongoose open
-mongoose.connect("mongodb://localhost:27017/project2_gardens");
+mongoose.connect(mongoDBURI);
 mongoose.connection.once("open", function() {
   console.log("mongoose connected");
 });
@@ -44,6 +49,6 @@ mongoose.connection.once("open", function() {
 
 
 //listener
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("listening");
 });
