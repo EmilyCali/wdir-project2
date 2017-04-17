@@ -17,10 +17,16 @@
 
     <main>
       <form action="/plants" method="POST">
+        <label>Garden:</label> <select name="garden">
+          <% for (var i = 0; i < gardens.length; i++) {%>
+            <option value="<%=gardens[i].name%>"><%=gardens[i].name%>
+            </option>
+          <%}%>
+        </select>
         <!-- you need to create a select for the images of the plants and for the gardens that they are going into -->
         <!-- you also should do this for colors and only have a few available for each plant, use if statements to make this work -->
         <br />
-        <label> Name: </label> <input tyoe="text" name="name" />
+        <label> Name: </label> <input type="text" name="name" />
         <br />
         <label>Color:</label> <input type="text" name="color" placeholder="what color is your plant?" />
         <br />

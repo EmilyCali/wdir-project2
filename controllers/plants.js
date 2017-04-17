@@ -30,7 +30,7 @@ router.get("/new", function(request, response) {
 
 //post new
 router.post("/", function(request, response) {
-  Garden.findOne({"garden": request.body.name},
+  Garden.findOne({"name": request.body.garden},
   function(error, foundGarden) {
     Plant.create(request.body, function(error, createdPlant) {
       console.log(error);
@@ -81,6 +81,7 @@ router.get("/:id/edit", function(request, response) {
       Garden.findOne({"plants._id": request.params.id}, function(error, foundPlantGarden) {
         console.log(error);
         response.render("plants/edit.ejs", {
+          plant: foundPlant,
           gardens: allGardens,
           plantGarden: foundPlantGarden
         });
@@ -94,12 +95,12 @@ router.get("/:id/edit", function(request, response) {
 //post edits
 router.put("/:id", function(request, response) {
   Plant.findByIdAndUpdate(request.params.id, request.body, {new:true}, function(error, editedPlant) {
-    console.log("this is the request body for edit" + request.body);
-    console.log(error);
+    //console.log("this is the request body for edit" + request.body);
+    //console.log(error);
     Garden.findOne({"plants._id":request.params.id}, function(error, foundGarden) {
       console.log("this is the found garden for edit " + foundGarden);
       console.log(error);
-      if (foundGarden._id.toString() !== request.body.userId) {
+      if (foundGarden._id.toString() !== request.body.gardenId) {
         foundGarden.plants.id(request.params.id).remove();
         foundGarden.save(function(error, savedFoundGarden) {
           console.log(error);
@@ -119,7 +120,7 @@ router.put("/:id", function(request, response) {
         foundGarden.plants.push(editedPlant);
         foundGarden.save(function(error, data) {
           console.log(error);
-          response.redirect("/photos/" + request.params.id);
+          response.redirect("/plants/" + request.params.id);
         });
       }
     });

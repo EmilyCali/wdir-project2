@@ -7,7 +7,7 @@
   <body>
 
     <header>
-      <h1> Put a Plant in the Ground!</h1>
+      <h1> Modify the Plant</h1>
       <nav>
         <a href="/"> Home </a>
         <br />
@@ -17,10 +17,22 @@
 
     <main>
       <form action="/plants/<%=plant._id%>?_method=PUT" method="POST">
+        <label>Garden:</label>
+        <select name="gardenId">
+          <% for (var i = 0; i < gardens.length; i++) {%>
+            <option value="<%=gardens[i]._id%>"
+              <% if (gardens[i]._id.toString() === plantGarden._id.toString()) {%>
+              selected
+              <%}%>
+              >
+              <%=gardens[i].name%>
+            </option>
+          <%}%>
+        </select>
         <!-- you need to create a select for the images of the plants and for the gardens that they are going into -->
         <!-- you also should do this for colors and only have a few available for each plant, use if statements to make this work -->
         <br />
-        <label> Name: </label> <input tyoe="text" name="name" value="<%=plant.name%>"/>
+        <label> Name: </label> <input type="text" name="name" value="<%=plant.name%>"/>
         <br />
         <label>Color:</label> <input type="text" name="color" value="<%=plant.color%>" />
         <br />
@@ -34,6 +46,7 @@
         <!-- make this a checkbox? -->
         <label> Type: </label>
         <input type="text" name="type" value="<%=plant.type%>" />
+        <br />
         <input type="submit" value="Update the Plant" />
       </form>
     </main>
