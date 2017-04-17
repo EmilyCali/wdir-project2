@@ -18,6 +18,7 @@ router.get("/", function(request, response) {
   });
 });
 
+
 //get new
 router.get("/new", function(request, response) {
   //render new page that lets you create a new garden
@@ -52,10 +53,22 @@ router.get("/:id", function(request, response) {
 //delete
 router.delete("/:id", function(request, response) {
   Garden.findByIdAndRemove(request.params.id, function(error, foundGarden) {
-    //function(error, data) {
     console.log(error);
-    //go back to the index for gardens
-    response.redirect("/gardens");
+    var plantIds = [];
+    for (var i = 0; i < foundGarden.plants.length; i++) {
+      plantIds.push(foundGarden.plants[i]._id);
+    }
+    Plant.remove({
+      _id: {
+        $in: plantIds
+      }
+    },
+    function(error, data) {
+      console.log(error);
+      //go back to the index for gardens
+      response.redirect("/gardens");
+      }
+    );
   });
 });
 
@@ -76,7 +89,7 @@ router.get("/:id/edit", function(request, response) {
 //post edits
 router.put("/:id", function(request, response) {
   Garden.findByIdAndUpdate(request.params.id, request.body, function() {
-    response.redirect("/gardens");
+    response.redirect("/gardens/" + request.params.id);
   });
 });
 

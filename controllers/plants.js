@@ -19,15 +19,26 @@ router.get("/", function(request, response) {
 
 //get new
 router.get("/new", function(request, response) {
-  response.render("plants/new.ejs");
+  Garden.find({}, function(error, allGardens) {
+    console.log(error);
+    response.render("plants/new.ejs", {
+      gardens: allGardens
+    });
+  });
 });
 
 
 //post new
 router.post("/", function(request, response) {
-  Plant.create(request.body, function(error, createdPlant) {
-    console.log(error);
-    response.redirect("/plants");
+  Garden.findOne({"garden": request.body.name},
+  function(error, foundGarden) {
+    Plant.create(request.body, function(error, createdPlant) {
+      console.log(error);
+      foundGarden.plants.push(createdPlant);
+      foundGarden.save(function(error, data) {
+        response.redirect("/plants");
+      });
+    });
   });
 });
 
@@ -36,8 +47,11 @@ router.post("/", function(request, response) {
 router.get("/:id", function(request, response) {
   Plant.findById(request.params.id, function(error, foundPlant) {
     console.log(error);
-    response.render("plants/show.ejs", {
-      plant: foundPlant
+    Garden.findOne({"plants._id":request.params.id}, function(error, foundGarden) {
+      response.render("plants/show.ejs", {
+        garden: foundGarden,
+        plant: foundPlant
+      });
     });
   });
 });
@@ -46,9 +60,14 @@ router.get("/:id", function(request, response) {
 
 //delete page
 router.delete("/:id", function(request, response) {
-  Plant.findByIdAndRemove(request.params.id, function(error) {
+  Plant.findByIdAndRemove(request.params.id, function(error, foundPlant) {
     console.log(error);
-    response.redirect("/plants");
+    Garden.findOne({"plants._id":request.params.id}, function(error, foundGarden) {
+      foundGarden.plants.id(request.params.id).remove();
+      foundGarden.save(function(error, data) {
+          response.redirect("/plants");
+      });
+    });
   });
 });
 
@@ -57,8 +76,15 @@ router.delete("/:id", function(request, response) {
 router.get("/:id/edit", function(request, response) {
   Plant.findById(request.params.id, function(error, foundPlant) {
     console.log(error);
-    response.render("plants/edit.ejs", {
-      plant: foundPlant
+    Garden.find({}, function(error, allGardens) {
+      console.log(error);
+      Garden.findOne({"plants._id": request.params.id}, function(error, foundPlantGarden) {
+        console.log(error);
+        response.render("plants/edit.ejs", {
+          gardens: allGardens,
+          plantGarden: foundPlantGarden
+        });
+      });
     });
   });
 });
@@ -67,13 +93,39 @@ router.get("/:id/edit", function(request, response) {
 
 //post edits
 router.put("/:id", function(request, response) {
-  Plant.findByIdAndUpdate(request.params.id, request.body, function(error, editedPlant) {
+  Plant.findByIdAndUpdate(request.params.id, request.body, {new:true}, function(error, editedPlant) {
+    console.log("this is the request body for edit" + request.body);
     console.log(error);
-    response.redirect("/plants", {
-      plant: editedPlant
+    Garden.findOne({"plants._id":request.params.id}, function(error, foundGarden) {
+      console.log("this is the found garden for edit " + foundGarden);
+      console.log(error);
+      if (foundGarden._id.toString() !== request.body.userId) {
+        foundGarden.plants.id(request.params.id).remove();
+        foundGarden.save(function(error, savedFoundGarden) {
+          console.log(error);
+          Garden.findById(request.body.gardenId, function(error, newGarden) {
+            console.log("this is the new garden in edit " + newGarden);
+            console.log(error);
+            newGarden.plants.push(editedPlant);
+            newGarden.save(function(error, savedNewGarden) {
+              console.log(error);
+              console.log("this is the newly saved garden in edit " + savedNewGarden);
+              response.redirect("/plants/" + request.params.id);
+            });
+          });
+        });
+      } else {
+        foundGarden.plants.id(request.params.id).remove();
+        foundGarden.plants.push(editedPlant);
+        foundGarden.save(function(error, data) {
+          console.log(error);
+          response.redirect("/photos/" + request.params.id);
+        });
+      }
     });
   });
 });
+
 
 
 
