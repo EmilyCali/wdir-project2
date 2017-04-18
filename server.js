@@ -12,8 +12,8 @@ var methodOverride = require("method-override");
 //declaration for using heroku or local express listener
 var port = process.env.PORT || 3000;
 
-
-var mongoDBURI = process.env.MONGODB_URI || "mongodb://localhost:27017/project2_gardens"
+//connection place for heroku or local
+var mongoDBURI = process.env.MONGODB_URI || "mongodb://localhost:27017/project2_gardens";
 
 
 //middleware
