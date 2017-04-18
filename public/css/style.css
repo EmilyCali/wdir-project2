@@ -1,0 +1,15 @@
+.plants {
+  display: flex;
+  flex-direction: row;
+  margin: 1em auto;
+  width: fit-content;
+}
+
+.plant {
+  display: inline-block;
+}
+
+img {
+  width: 50%;
+  position: bottom;
+}

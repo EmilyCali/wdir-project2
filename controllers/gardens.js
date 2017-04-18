@@ -52,12 +52,16 @@ router.get("/:id", function(request, response) {
 
 //delete
 router.delete("/:id", function(request, response) {
+  //find the garden and remove it from the database
   Garden.findByIdAndRemove(request.params.id, function(error, foundGarden) {
     console.log(error);
+    //put the plants from it into an array
     var plantIds = [];
+    //for each of those plants
     for (var i = 0; i < foundGarden.plants.length; i++) {
+      //push up the id
       plantIds.push(foundGarden.plants[i]._id);
-    }
+    } //remove that plant by looking for its id
     Plant.remove({
       _id: {
         $in: plantIds
@@ -88,7 +92,9 @@ router.get("/:id/edit", function(request, response) {
 
 //post edits
 router.put("/:id", function(request, response) {
+  //find the garden
   Garden.findByIdAndUpdate(request.params.id, request.body, function() {
+    //go to edited garden page
     response.redirect("/gardens/" + request.params.id);
   });
 });

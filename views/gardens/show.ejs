@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Garden View</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
 
   <body>
@@ -26,7 +27,7 @@
         <br />
         <h3> Description </h3>
         <p> <%=garden.description%> </p>
-        <div>
+        <div class="plants">
           <% for(var i = 0; i < garden.plants.length; i++){ %>
             <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>"> <img src="<%=garden.plants[i].img%>"></a>
             </div>
