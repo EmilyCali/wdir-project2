@@ -23,19 +23,33 @@
             </option>
           <%}%>
         </select>
-        <!-- you need to create a select for the images of the plants and for the gardens that they are going into -->
-        <!-- you also should do this for colors and only have a few available for each plant, use if statements to make this work -->
         <br />
         <label> Name: </label> <input type="text" name="name" />
         <br />
-        <label>Color:</label> <input type="text" name="color" placeholder="what color is your plant?" />
+        <label> Flower: </label>
+        <select name="img">
+          <option value="/assets/blackeyed_susan.gif">black eyed susan</option>
+          <option value="/assets/crimson_poppy.gif"> red poppy</option>
+          <option value="/assets/orange_poppy.gif"> orange poppy </option>
+          <option value="/assets/daffodil.gif"> daffodil </option>
+          <option value="/assets/forget_me_knots.gif"> forget me nots </option>
+          <option value="/assets/lavender.gif"> lavender </option>
+          <option value="/assets/pansy.gif"> pansy </option>
+          <option value="/assets/morning_glory.gif"> morning glory </option>
+          <option value="/assets/lily_of_the_valley.gif"> lily of the valley</option>
+          <option value="/assets/pink_rununculus.gif"> pink rununculus </option>
+          <option value="/assets/purple_rununculus.gif"> purple rununculus</option>
+          <option value="/assets/red_rununculus.gif"> red rununculus </option>
+          <option value="/assets/pink_tulip.gif"> pink tulip </option>
+          <option value="/assets/red_tulip.gif"> red tulip </option>
+          <option value="/assets/yellow_tulip.gif"> yellow tulip </option>
+        </select>
         <br />
-        <!-- look at pokemon to see what needs to happen here since it;s an array -->
-        <label>Likes:</label> <input type="text" name="likes" placeholder="please seperate with commas" />
+        <label>Likes:</label> <textarea type="text" name="likes" rows="1" cols="60" placeholder="examples: sun, juice, moss"> </textarea>
         <br />
         <label>Description:</label>
         <!-- make this a textbox -->
-        <input type="text" name="description" placeholder="tell us about your plant" />
+        <textarea type="text" name="description" rows="5" cols="50" placeholder="tell us about your plant">  </textarea>
         <br />
         <!-- make this a checkbox? -->
         <label>Type: </label>

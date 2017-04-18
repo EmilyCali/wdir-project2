@@ -23,6 +23,10 @@ app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: false}));
 //use stylesheet
 
+//use images
+var path =require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
 
 //require controllers
 var gardensController = require("./controllers/gardens.js");

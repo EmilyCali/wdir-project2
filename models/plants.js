@@ -8,11 +8,11 @@ var Garden = require("./gardens.js");
 var plantSchema = new Schema({
   garden: String,
   name: ({type: String, unique: true, required: true}),
-  img: String, //need to make this required
+  img: String, //need to make this required or set a default
   color: String,
-  likes: [String], //sunlight shade water clay rocks
+  likes: String, //sunlight shade water clay rocks
   description: String, //leaf shape petal shape smell
-  type: String //perrenial or annual
+  type: String //perrenial or annual consider using enum
 });
 
 var Plant = mongoose.model("Plant", plantSchema);
