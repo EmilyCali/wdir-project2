@@ -1,3 +1,11 @@
+body {
+  padding: 1em;
+}
+
+main {
+  align-content: bottom;
+}
+
 .plants {
   display: flex;
   flex-direction: row;
@@ -11,5 +19,4 @@
 
 img {
   width: 50%;
-  position: bottom;
 }
