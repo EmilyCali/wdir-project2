@@ -18,13 +18,13 @@
     </header>
 
     <main>
-      <ul>
+      <div>
         <% for (var i = 0; i < plants.length; i++) {%>
-          <li>
-            <a href="/plants/<%=plants[i]._id%>"><%=plants[i].name%></a>
-          </li>
+          <div class="plant">
+            <a href="/plants/<%=plants[i]._id%>"> <img src="<%=plants[i].img%>"></a>
+          </div>
         <%}%>
-      </ul>
+      </div>
     </main>
   </body>
 </html>

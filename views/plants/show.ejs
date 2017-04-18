@@ -24,10 +24,7 @@
         <!-- list garden this plant is in -->
         <small> <%=plant.name%> lives in <a href="/gardens/<%=garden._id%>"><%=garden.name%></a> </small>
 
-        <div> <img src="<%=plant.img%>"></div>
-        <br />
-        <h3> Color </h3>
-        <p> <%=plant.color%> </p>
+
         <br />
         <h3> Likes </h3>
         <p><%=plant.likes%>
@@ -37,6 +34,7 @@
         <br />
         <h3> Type </h3>
         <p> <%=plant.type%> </p>
+        <div class="plant"> <img src="<%=plant.img%>"> </div>
       </section>
 
       <section>

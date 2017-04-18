@@ -21,20 +21,17 @@
       <section>
         <h2> <%=garden.name%> </h2>
         <br />
-        <ul>
-          <!-- shows all the images -->
-          <% for(var i = 0; i < garden.plants.length; i++){ %>
-            <li class="plant"><a href="/plants/<%=garden.plants[i]._id%>"><%=garden.plants[i].name%>
-              <!-- need to show images here, but these will be assets based on plants planted -->
-              </a>
-            </li>
-        <% } %>
-      </ul>
         <h3> Style </h3>
         <p> <%=garden.style%> </p>
         <br />
         <h3> Description </h3>
         <p> <%=garden.description%> </p>
+        <div>
+          <% for(var i = 0; i < garden.plants.length; i++){ %>
+            <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>"> <img src="<%=garden.plants[i].img%>"></a>
+            </div>
+        <% } %>
+        </div>
       </section>
 
       <section>
