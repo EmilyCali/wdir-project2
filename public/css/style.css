@@ -8,6 +8,7 @@ header {
 }
 
 h1 {
+  font-family: 'Ribeye Marrow', cursive;
   font-size: 60px;
 }
 
@@ -133,6 +134,27 @@ img {
 /*specifically the image on the home page*/
 #dandelion {
   width: 120%;
+}
+
+/*modal situation on home page*/
+#modal {
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  display: none;
+}
+
+#modal-text {
+  background-color: white;
+  height: 450px;
+  width: 350px;
+  border-radius: 5px;
+  margin: 150px auto;
+  box-shadow: 0 3px 3px #C5Df71;
+  padding: 2px;
 }
 
 
