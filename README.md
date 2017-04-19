@@ -16,3 +16,19 @@ For the images I drew I took inspiration from the below pictures:
 <img src="https://s-media-cache-ak0.pinimg.com/736x/c2/8f/a7/c28fa7588bfe47420c886f82e6a9c7bf.jpg">
 <br />
 <img src="https://thumb1.shutterstock.com/display_pic_with_logo/272785/272785,1240327773,4/stock-vector-vector-illustration-of-flowers-design-set-made-with-simple-line-only-28902391.jpg">
+<br />
+I had initially set out to create a select tool that would show the images but got lost in the possibilites for several hours and still wasn't getting it to work so I instead made it so that users could select a flower and there would be an img value to it that would be pushed into the plant object. This worked great and since it starts on a flower it shouldn't come as a null value.
+
+Once I had the image choices working I went back and altered all my pages to show the images instead of lists of names etc. I had trouble with this for a bit because I wasn't siting my images correctly. This was causing rampant errors and display breaks. I fixed this by adding /assets/ to the beginning of each image option value.
+
+I then went about styling my pages, I incorporated bootstrap, was confused about why it wouldn't easily do columns, realized that was a skeleton functionality and decided to keep bootstrap for the text choices and nice margins. I tweaked a few  things and added a new typeface from google fonts called "Ribeye Marrow" which can be seen below.
+<br />
+<img src="http://www.fontscape.com/pictures/google/RibeyeMarrow.gif">
+<br />
+
+I chose colors for my site from both the defaults in MS paint, which I used to draw all my flower images, and from the image below.
+<br />
+<img src="https://s-media-cache-ak0.pinimg.com/236x/7c/2d/d6/7c2dd66d451732f0ae545ae5d58bf92c.jpg">
+<br />
+
+I decided not to add a background to my site in part because I liked the more simplistic look and also because since I had to draw my flowers in MS Paint (photoshop and illustrator were not giving me the brushstroke pressure look) they do not have transparent backgrounds. I did attempt to make the bottom of them transparent to make a dirt patch for all the plants to appear to be growing out of but I was not able to make the plants rest at the absolute bottom of the page to allow for this and, with the responsive layout, they would most likely move out of place and not sit in the dirt at all.
