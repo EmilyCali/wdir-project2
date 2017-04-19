@@ -115,6 +115,18 @@ ul {
 
 img {
   width: 50%;
+  /*code from http://stackoverflow.com/questions/15464055/css-transition-effect-makes-image-blurry-moves-image-1px-in-chrome trying to resolve that images are blurry until hovered over, seems to have sharpened a little but not all the way*/
+  image-rendering: optimizeSpeed;
+  /*firefox*/
+  image-rendering: -moz-crisp-edges;
+  /*opera*/
+  image-rendering: -o-crisp-edges;
+  /*chrome and safari */
+  image-rendering: -webkit-optimize-contrast;
+  /*css3*/
+  image-rendering: optimize-contrast;
+  /*ie*/
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 /*main area on home page*/
@@ -176,6 +188,8 @@ img {
 
 .shake:hover {
   animation: shake 0.75s infinite;
+  backface-visibility: hidden;
+
 }
 
 /*media queries*/

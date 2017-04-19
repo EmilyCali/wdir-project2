@@ -18,7 +18,7 @@
       <nav>
         <a href="/">Home</a>
         <br />
-        <a href="/plants/new"> Find a Plant </a>
+        <a href="/plants/new"> Plant Something </a>
         <br />
         <a href="/gardens"> Gardens </a>
       </nav>
@@ -29,7 +29,7 @@
       <div class="plants-wrap">
         <% for (var i = 0; i < plants.length; i++) {%>
           <div class="plant">
-            <a href="/plants/<%=plants[i]._id%>"> <img class="shake" src="<%=plants[i].img%>"></a>
+            <a href="/plants/<%=plants[i]._id%>"> <img class="plantpic shake" src="<%=plants[i].img%>"></a>
           </div>
         <%}%>
       </div>
