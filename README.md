@@ -32,3 +32,6 @@ I chose colors for my site from both the defaults in MS paint, which I used to d
 <br />
 
 I decided not to add a background to my site in part because I liked the more simplistic look and also because since I had to draw my flowers in MS Paint (photoshop and illustrator were not giving me the brushstroke pressure look) they do not have transparent backgrounds. I did attempt to make the bottom of them transparent to make a dirt patch for all the plants to appear to be growing out of but I was not able to make the plants rest at the absolute bottom of the page to allow for this and, with the responsive layout, they would most likely move out of place and not sit in the dirt at all.
+
+<a href="https://expressjs.com/en/starter/static-files.html"> where I looked about my assets images not working</a>
+<a href="https://www.w3schools.com/html/html_form_elements.asp"> where I looked for form information </a>
