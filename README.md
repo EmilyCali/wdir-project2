@@ -3,11 +3,17 @@ Web Development Immersive Project 2 CRUD CRAP application
 
 <a href="https://safe-chamber-59689.herokuapp.com/"> link to live page </a>
 
+<h2> Project Requirements </h2>
 Project Two requirements: create a full stack application using two models and mvc folder structure. Complete with Node.js, Express, Mongoose and EJS with RESTFUL routes.
 
+<h2> Background </h2>
 During Unit 6 of the General Assembly course students learned about mongoDB and ejs dynamic web pages. This assignment was given after several days of building data bases using two models. In class students practiced by making models of authors which were related to models of articles. They also completed homework based on a previous students' project two assignment that had photographers that had photographs. We were prompted to think of things that relate to each other to come up with what our apps could be about.
 
-In the week leading up the this assignment in mid April, my family has been gardening a lot. I decided that I would create an app where gardens could be made and plants could be put into them. I approached the assignment like the homework involving photographers and photos. Once I had a relationship working between the gardens and the plants I verified that my application was a full crud app for both models. I ran into some errors that resulted in me dropping the database a few times but once I had it running I set to altering the application to allow for asset images I drew and several other selection processes.
+<h2> The Idea </h2>
+In the week leading up the this assignment in mid April, my family has been gardening a lot. I decided that I would create an app where gardens could be made and plants could be put into them.
+
+<h2> The Approach </h2>
+I approached the assignment like the homework involving photographers and photos. Once I had a relationship working between the gardens and the plants I verified that my application was a full crud app for both models. I ran into some errors that resulted in me dropping the database a few times but once I had it running I set to altering the application to allow for asset images I drew and several other selection processes.
 
 For the images I drew I took inspiration from the below pictures:
 <br />
@@ -17,7 +23,7 @@ For the images I drew I took inspiration from the below pictures:
 <br />
 <img src="https://thumb1.shutterstock.com/display_pic_with_logo/272785/272785,1240327773,4/stock-vector-vector-illustration-of-flowers-design-set-made-with-simple-line-only-28902391.jpg">
 <br />
-I had initially set out to create a select tool that would show the images but got lost in the possibilites for several hours and still wasn't getting it to work so I instead made it so that users could select a flower and there would be an img value to it that would be pushed into the plant object. This worked great and since it starts on a flower it shouldn't come as a null value.
+I had initially set out to create a select tool that would show the images but got lost in the possibilities for several hours and still wasn't getting it to work so I instead made it so that users could select a flower and there would be an img value to it that would be pushed into the plant object. This worked great and since it starts on a flower it shouldn't come as a null value.
 
 Once I had the image choices working I went back and altered all my pages to show the images instead of lists of names etc. I had trouble with this for a bit because I wasn't siting my images correctly. This was causing rampant errors and display breaks. I fixed this by adding /assets/ to the beginning of each image option value.
 
@@ -33,5 +39,10 @@ I chose colors for my site from both the defaults in MS paint, which I used to d
 
 I decided not to add a background to my site in part because I liked the more simplistic look and also because since I had to draw my flowers in MS Paint (photoshop and illustrator were not giving me the brushstroke pressure look) they do not have transparent backgrounds. I did attempt to make the bottom of them transparent to make a dirt patch for all the plants to appear to be growing out of but I was not able to make the plants rest at the absolute bottom of the page to allow for this and, with the responsive layout, they would most likely move out of place and not sit in the dirt at all.
 
-<a href="https://expressjs.com/en/starter/static-files.html"> where I looked about my assets images not working</a>
-<a href="https://www.w3schools.com/html/html_form_elements.asp"> where I looked for form information </a>
+
+<h2> Resources </h2>
+<a href="https://expressjs.com/en/starter/static-files.html"> assets connections</a>
+<br />
+<a href="https://www.w3schools.com/html/html_form_elements.asp">form information </a>
+<br />
+<a href="http://www.cssreflex.com/snippets/css-button-with-wiggle-effect/"> animating a hover shake </a>

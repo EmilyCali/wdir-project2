@@ -21,6 +21,8 @@
         <a href="/gardens"> All Gardens </a>
         <br />
         <a href="/plants"> All Plants </a>
+        <br />
+        <a href="/plants/new"> Plant Something </a>
       </nav>
     </header>
 
@@ -47,9 +49,9 @@
       </section>
 
       <section>
-        <div class="plants">
+        <div class="plants-wrap">
           <% for(var i = 0; i < garden.plants.length; i++){ %>
-            <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>"> <img src="<%=garden.plants[i].img%>"></a>
+            <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>"> <img class="shake" src="<%=garden.plants[i].img%>"></a>
             </div>
         <% } %>
         </div>

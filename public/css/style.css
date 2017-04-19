@@ -2,16 +2,13 @@ body {
   padding: 1em;
 }
 
+/*containns h1 and nav*/
 header {
   font-family: 'Ribeye Marrow', cursive;
 }
 
 h1 {
   font-size: 60px;
-}
-
-main {
-  align-content: bottom;
 }
 
 nav a {
@@ -23,12 +20,41 @@ nav a:hover {
   color: #3E6B4C;
 }
 
+/*contains the information and images*/
+main {
+  align-content: bottom;
+}
+
+/*edit and delete buttons*/
 .edit, .edit a, .delete {
   font-family: 'Ribeye Marrow', cursive;
   color: #2DB455;
   opacity: 80%;
 }
+/*hove change for edit*/
+.edit a:hover {
+  color: #3E6B4C;
+}
+/*hover change for delete*/
+.delete:hover {
+  color: #3E6B4C;
+}
 
+/*form styling*/
+input {
+  border-radius: 5px;
+  background-color: white;
+  border-color: #C5Df71;
+}
+
+/*more form styling*/
+option, textarea {
+  border-radius: 5px;
+  background-color: white;
+  border-color: #C5Df71;
+}
+
+/*garden name links*/
 .garden {
   color: #463926;
   opacity: 60%;
@@ -36,17 +62,21 @@ nav a:hover {
 }
 
 .garden:hover {
-  background-color: #C5Df71;
+  color: #C5Df71;
 }
 
+ul {
+  padding-top: 1em;
+}
+/*li styling */
 .lister {
   display: flex;
   flex-flow: row wrap;
-  padding-top: 1em;
   border-radius: 5px;
   font-size: 28px;
 }
 
+/*styling to have two columns, one with info one with the picture on the show plant page*/
 .two {
   display: flex;
   flex-flow: row;
@@ -54,23 +84,76 @@ nav a:hover {
   padding-right: 3em;
 }
 
+/*plant div for image on show plant page*/
 .oneplant {
   width: 200%;
   padding-left: 10em;
   padding-top: 3em;
 }
 
-.plants {
+/*div that contains multiple plant images*/
+.plants-wrap {
   display: flex;
   flex-direction: row wrap;
-  margin: 1em auto;
-  width: fit-content;
+  padding-top: 3em;
+  /*margin: 1em auto;*/
+  /*width: fit-content;*/
+  justify-content: space-between;
+  width: 100%;
 }
 
+/*the individual plant div that holds the plant picture, rests inside the plant wrap div*/
 .plant {
-  display: inline-block;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: bottom;
+  align-items: bottom;
+  position: bottom;
+  justify-content: space-between;
 }
 
 img {
   width: 50%;
 }
+
+/*main area on home page*/
+#mainhome {
+  display: flex;
+  padding: 2em;
+  position: bottom;
+}
+
+/*image div in main area*/
+#mainimage {
+  padding-left: 60%;
+  padding-right: 2em;
+  width: fit-content;
+}
+
+/*specifically the image on the home page*/
+#dandelion {
+  width: 120%;
+}
+
+
+/*creating a shake effect on the plants in the garden show page and on the plant index page*/
+
+/*looked at code from http://www.cssreflex.com/snippets/css-button-with-wiggle-effect/*/
+
+@keyframes shake {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.shake:hover {
+  animation: shake 0.75s infinite;
+}
+
+/*media queries*/
