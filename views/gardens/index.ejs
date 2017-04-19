@@ -25,10 +25,10 @@
     </header>
 
     <main>
-      <ul>
+      <ul class="list-unstyled">
         <% for (var i =0; i < gardens.length; i++) {%>
           <li>
-            <a href="/gardens/<%=gardens[i]._id%>"><%=gardens[i].name%></a>
+            <a class="garden lister" href="/gardens/<%=gardens[i]._id%>"><%=gardens[i].name%></a>
           </li>
           <!-- add vines to frame text? -->
         <%}%>

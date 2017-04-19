@@ -25,32 +25,38 @@
     </header>
 
     <main>
-      <section>
+      <section class="edit">
         <a href="/plants/<%=plant._id%>/edit"> Change the Plant</a>
       </section>
 
-      <section>
+      <section class="delete">
         <form action="/plants/<%=plant._id%>?_method=DELETE" method="POST">
           <input type="submit" value="Pull it Up" />
         </form>
       </section>
 
-      <section>
-        <h2> <%=plant.name%> </h2>
-        <br />
-        <!-- list garden this plant is in -->
-        <small> <%=plant.name%> lives in <a href="/gardens/<%=garden._id%>"><%=garden.name%></a> </small>
-        <br />
-        <h3> Likes </h3>
-        <p><%=plant.likes%>
-        <br />
-        <h3> Description </h3>
-        <p> <%=plant.description%> </p>
-        <br />
-        <h3> Type </h3>
-        <p> <%=plant.type%> </p>
-        <div class="plant"> <img src="<%=plant.img%>"> </div>
+      <section class="two">
+        <div>
+          <h2> <%=plant.name%> </h2>
+          <br />
+          <!-- list garden this plant is in -->
+          <small> <%=plant.name%> lives in <a class="garden" href="/gardens/<%=garden._id%>"><%=garden.name%></a> </small>
+          <br />
+          <h3> Likes </h3>
+          <p><%=plant.likes%> </p>
+          <br />
+          <h3> Description </h3>
+          <p> <%=plant.description%> </p>
+          <br />
+          <h3> Type </h3>
+          <p> <%=plant.type%> </p>
+        </div>
+        <div>
+          <div class="oneplant"> <img src="<%=plant.img%>"> </div>
+        </div>
       </section>
+
+
 
 
 

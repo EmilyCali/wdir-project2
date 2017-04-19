@@ -25,16 +25,17 @@
     </header>
 
     <main>
-      <section>
+      <section class="edit">
         <a href="/gardens/<%=garden._id%>/edit">Alter the Garden</a>
       </section>
 
-      <section>
+      <section class="delete">
         <form action="/gardens/<%=garden._id%>?_method=DELETE" method="POST">
           <input type="submit" value="Mow it down" />
         </form>
       </section>
 
+      <div>
       <section>
         <h2> <%=garden.name%> </h2>
         <br />
@@ -43,6 +44,9 @@
         <br />
         <h3> Description </h3>
         <p> <%=garden.description%> </p>
+      </section>
+
+      <section>
         <div class="plants">
           <% for(var i = 0; i < garden.plants.length; i++){ %>
             <div class="plant"><a href="/plants/<%=garden.plants[i]._id%>"> <img src="<%=garden.plants[i].img%>"></a>
@@ -50,6 +54,7 @@
         <% } %>
         </div>
       </section>
+    </div>
     </main>
 
   </body>

@@ -24,7 +24,7 @@
 
     <main>
       <form action="/plants/<%=plant._id%>?_method=PUT" method="POST">
-        <label>Garden:</label>
+        <label> Garden:</label>
         <select name="gardenId">
           <% for (var i = 0; i < gardens.length; i++) {%>
             <option value="<%=gardens[i]._id%>"

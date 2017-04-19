@@ -6,13 +6,63 @@ header {
   font-family: 'Ribeye Marrow', cursive;
 }
 
+h1 {
+  font-size: 60px;
+}
+
 main {
   align-content: bottom;
 }
 
+nav a {
+  color: #2DB455;
+  opacity: 80%;
+}
+
+nav a:hover {
+  color: #3E6B4C;
+}
+
+.edit, .edit a, .delete {
+  font-family: 'Ribeye Marrow', cursive;
+  color: #2DB455;
+  opacity: 80%;
+}
+
+.garden {
+  color: #463926;
+  opacity: 60%;
+  font-weight: bold;
+}
+
+.garden:hover {
+  background-color: #C5Df71;
+}
+
+.lister {
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 1em;
+  border-radius: 5px;
+  font-size: 28px;
+}
+
+.two {
+  display: flex;
+  flex-flow: row;
+  height: 60%;
+  padding-right: 3em;
+}
+
+.oneplant {
+  width: 200%;
+  padding-left: 10em;
+  padding-top: 3em;
+}
+
 .plants {
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   margin: 1em auto;
   width: fit-content;
 }
