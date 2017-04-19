@@ -7,7 +7,7 @@ var $closeModal = $("#closeModal");
 //get images
 var $plantpics = $(".plantpic");
 //get watering feature
-
+var $water = $(".water");
 
 
 //handlers ================================
@@ -25,7 +25,7 @@ var wiltedPlants = function() {
   $plantpics.addClass("wilted");
 };
 //function for bringing back images when watering happens,
-var wateredPlants = function() {
+var waterPlants = function() {
   $plantpics.removeClass("wilted");
 };
 
@@ -40,3 +40,4 @@ $closeModal.on("click", closeModal);
 //$plantpics.fadeTo(2000, 0.4).delay(4000);
 window.setTimeout(wiltedPlants, 10000);
 //watering on click call function
+$water.on("click", waterPlants);

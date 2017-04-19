@@ -41,8 +41,19 @@ main {
   color: #3E6B4C;
 }
 
+/*button to water*/
+.water {
+  font-family: 'Ribeye Marrow', cursive;
+  opacity: 80%;
+  color: #5FAFA8;
+}
+
+.water button:hover{
+  color: #81C0BB;
+}
+
 /*form styling*/
-input {
+input, button{
   border-radius: 5px;
   background-color: white;
   border-color: #C5Df71;
