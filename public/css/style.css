@@ -129,6 +129,11 @@ img {
   -ms-interpolation-mode: nearest-neighbor;
 }
 
+/*style the wilted plants by thier class*/
+.wilted {
+  opacity: .33;
+}
+
 /*main area on home page*/
 #mainhome {
   display: flex;

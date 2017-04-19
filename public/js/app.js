@@ -8,6 +8,8 @@ var $closeModal = $("#closeModal");
 var $plantpics = $(".plantpic");
 //get watering feature
 
+
+
 //handlers ================================
 //when you click on the about this app link open the modal
 var openModal = function() {
@@ -18,8 +20,14 @@ var closeModal = function() {
   $modal.css("display", "none");
 };
 //function for fading out images
-$plantpics.fadeTo(2000, 0.4).delay(4000);
+//keep plant at opacity
+var wiltedPlants = function() {
+  $plantpics.addClass("wilted");
+};
 //function for bringing back images when watering happens,
+var wateredPlants = function() {
+  $plantpics.removeClass("wilted");
+};
 
 
 
@@ -29,4 +37,6 @@ $openModal.on("click", openModal);
 //grabbing the close to click and hide
 $closeModal.on("click", closeModal);
 
+//$plantpics.fadeTo(2000, 0.4).delay(4000);
+window.setTimeout(wiltedPlants, 10000);
 //watering on click call function
