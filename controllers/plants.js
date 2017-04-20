@@ -39,11 +39,6 @@ router.post("/", function(request, response) {
   function(error, foundGarden) {
     //create a plant to the plants array
     Plant.create(request.body, function(error, createdPlant) {
-      //trying to determine if the likes array needs a splitter like in teh pokemon app
-      //var getLikesArray = function(likesString) {
-        //var likesArray = [];
-        //likesArray = likesString.split(",");
-      //}
       console.log(error);
       //push the newly created plant to the array of plants inside the garden selected
       foundGarden.plants.push(createdPlant);

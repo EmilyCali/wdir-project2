@@ -107,11 +107,11 @@ ul {
 /*div that contains multiple plant images*/
 .plants-wrap {
   display: flex;
-  flex-direction: row wrap;
+  flex-flow: row wrap;
   padding-top: 3em;
   margin: 1em auto;
   /*width: fit-content;*/
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
 }
@@ -119,7 +119,7 @@ ul {
 /*the individual plant div that holds the plant picture, rests inside the plant wrap div*/
 .plant {
   display: flex;
-  flex-flow: row wrap;*/
+  flex-flow: row wrap;
   align-content: bottom;
   align-items: bottom;
   position: bottom;
@@ -127,7 +127,7 @@ ul {
 }
 
 img {
-  width: 100px;
+  width: 50%;
   /*code from http://stackoverflow.com/questions/15464055/css-transition-effect-makes-image-blurry-moves-image-1px-in-chrome trying to resolve that images are blurry until hovered over, seems to have sharpened a little but not all the way*/
   image-rendering: optimizeSpeed;
   /*firefox*/
