@@ -13,11 +13,11 @@ During Unit 6 of the General Assembly course students learned about mongoDB and 
 In the week leading up the this assignment in mid April, my family has been gardening a lot. I decided that I would create an app where gardens could be made and plants could be put into them.
 
 <h2> Wire Framing </h2>
-<img src="/assets/IMG_9536.jpg">
+<img src="https://raw.githubusercontent.com/EmilyCali/wdir-project2/master/public/assets/IMG_9536.jpg">
 <br />
-<img src="/assets/IMG_9537.jpg">
+<img src="https://raw.githubusercontent.com/EmilyCali/wdir-project2/master/public/assets/IMG_9537.jpg">
 <br />
-<img src="/assets/IMG_9538.jpg">
+<img src="https://raw.githubusercontent.com/EmilyCali/wdir-project2/master/public/assets/IMG_9538.jpg">
 <br />
 
 <h2> The Approach </h2>
@@ -64,7 +64,7 @@ I wanted to incorporate an API into my app and attempted to do so using the Unit
 <h2> Next Steps </h2>
 If I have the opportunity and desire to come back to this I would like to create user sessions and to try and develop the game aspect a bit more. I also think it could be nice to have a feature that allows people to find where the plants are being sold in the area or learn about their area in regards to weather or growing conditions.
 
-I'd also like to work out validators. I have set names to required and was working on making sure no one could not enter a name or enter a name that had already been used but it kept breaking my site. 
+I'd also like to work out validators. I have set names to required and was working on making sure no one could not enter a name or enter a name that had already been used but it kept breaking my site.
 
 <h2> Resources </h2>
 <a href="https://expressjs.com/en/starter/static-files.html"> assets connections</a>
