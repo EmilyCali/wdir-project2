@@ -1,0 +1,68 @@
+/*modal situation on home page*/
+#modal {
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  display: none;
+}
+
+#modal-text {
+  background-color: white;
+  height: 450px;
+  width: 350px;
+  border-radius: 5px;
+  margin: 150px auto;
+  box-shadow: 0 3px 3px #C5Df71;
+  padding: 2px;
+}
+
+#openModal {
+  font-family: 'Ribeye Marrow', cursive;
+  color: #ECBEC7;
+}
+
+#closeModal {
+  font-family: 'Ribeye Marrow', cursive;
+  color: #ECBEC7;
+}
+
+
+/*modal situation on the plant show page*/
+#plantModal {
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  display: none;
+}
+
+#plantModalFrame {
+  background-color: white;
+  height: 80%;
+  width: 80%;
+  border-radius: 5px;
+  margin: 50px auto;
+  box-shadow: 0 3px 3px #C5Df71;
+  padding: 2px;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+#closePlantModal {
+  color: #ECBEC7;
+  font-family: 'Ribeye Marrow', cursive;
+}
+
+#openPlantModal {
+  float: right;
+  padding: 20px;
+  color: #ECBEC7;
+}

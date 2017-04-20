@@ -72,15 +72,16 @@ option, textarea {
   opacity: 60%;
   font-weight: bold;
 }
-
+/*garden names hover change*/
 .garden:hover {
   color: #C5Df71;
 }
-
+/*garden name list padding*/
 ul {
   padding-top: 1em;
 }
-/*li styling */
+
+/*li gardens styling */
 .lister {
   display: flex;
   flex-flow: row wrap;
@@ -108,16 +109,17 @@ ul {
   display: flex;
   flex-direction: row wrap;
   padding-top: 3em;
-  /*margin: 1em auto;*/
+  margin: 1em auto;
   /*width: fit-content;*/
   justify-content: space-between;
   width: 100%;
+  height: 100%;
 }
 
 /*the individual plant div that holds the plant picture, rests inside the plant wrap div*/
 .plant {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap;*/
   align-content: bottom;
   align-items: bottom;
   position: bottom;
@@ -125,7 +127,7 @@ ul {
 }
 
 img {
-  width: 50%;
+  width: 100px;
   /*code from http://stackoverflow.com/questions/15464055/css-transition-effect-makes-image-blurry-moves-image-1px-in-chrome trying to resolve that images are blurry until hovered over, seems to have sharpened a little but not all the way*/
   image-rendering: optimizeSpeed;
   /*firefox*/
@@ -164,26 +166,6 @@ img {
   width: 120%;
 }
 
-/*modal situation on home page*/
-#modal {
-  background-color: rgba(0,0,0,0.4);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  overflow: auto;
-  display: none;
-}
-
-#modal-text {
-  background-color: white;
-  height: 450px;
-  width: 350px;
-  border-radius: 5px;
-  margin: 150px auto;
-  box-shadow: 0 3px 3px #C5Df71;
-  padding: 2px;
-}
 
 
 /*creating a shake effect on the plants in the garden show page and on the plant index page*/

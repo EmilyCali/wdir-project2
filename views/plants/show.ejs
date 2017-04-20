@@ -6,14 +6,43 @@
     <!-- bootstrap -->
     <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- my stylesheet -->
+    <!-- my stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/modals.css">
     <!-- typefaces -->
     <link href="https://fonts.googleapis.com/css?family=Ribeye+Marrow" rel="stylesheet">
   </head>
   <body>
+    <section id="plantModal">
+      <!-- create an iframe depending on the image shown, connect to USDA data pages -->
+      <div id="plantModalFrame">
+        <% if (plant.img == "/assets/yellow_tulip.gif" || plant.img == "/assets/pink_tulip.gif" || plant.img == "/assets/red_tulip.gif") { %>
+          <iframe  src="https://plants.usda.gov/core/profile?symbol=TULIP"> </iframe>
+        <% } else if (plant.img == "/assets/blackeyed_susan.gif") { %>
+          <iframe  src="https://plants.usda.gov/core/profile?symbol=RUHI2"> </iframe>
+        <% } else if (plant.img == "/assets/forget_me_knots.gif") { %>
+          <iframe  src="https://plants.usda.gov/core/profile?symbol=MYSC"> </iframe>
+        <% } else if (plant.img == "/assets/lavender.gif") {%>
+          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=LAAN81"> </iframe>
+        <% } else if (plant.img == "/assets/red_rununculus.gif" || plant.img == "/assets/purple_rununculus.gif" || plant.ing == "/assets/red_rununculus.gif") { %>
+          <iframe  src="https://plants.usda.gov/core/profile?symbol=RASU4&photoID=rasu4_001_ahp.tif"> </iframe>
+        <% }  else if (plant.img == "/assets/crimson_poppy.gif" || plant.img == "/assets/orange_poppy.gif") { %>
+          <iframe  src="https://plants.usda.gov/core/profile?symbol=ESCA2#"> </iframe>
+        <% } else if (plant.img == "/assets/pansy.gif") { %>
+          <iframe src="https://plants.usda.gov/core/profile?symbol=VIBI"> </iframe>
+        <% } else if (plant.img == "/assets/lily_of_the_valley.gif") { %>
+          <iframe src="https://plants.usda.gov/core/profile?symbol=COMA7"> </iframe>
+        <% } else if (plant.img == "/assets/morning_glory.gif") { %>
+          <iframe src="https://plants.usda.gov/core/profile?symbol=IPJA"> </iframe>
+        <% } else if (plant.img == "/assets/daffodil.gif") { %>
+          <iframe src="https://plants.usda.gov/core/profile?symbol=NARCI"> </iframe>
+        <% } %>
+        <a id="closePlantModal" href="#"> Close </a>
+      </div>
+      </section>
 
     <header>
+      <a id="openPlantModal" href="#"> Learn Facts! </a>
       <h1> Take a Closer Look </h1>
       <nav>
         <a href="/"> Home </a>
@@ -21,6 +50,8 @@
         <a href="/gardens"> All Gardens </a>
         <br />
         <a href="/plants"> All Plants </a>
+        <br />
+
       </nav>
     </header>
 
@@ -58,33 +89,12 @@
         <div>
           <div class="oneplant"> <img class="plantpic" src="<%=plant.img%>"> </div>
         </div>
+
       </section>
+
     </main>
 
-    <section>
-      <!-- create an iframe depending on the image shown, connect to USDA data pages -->
-        <% if (plant.img == "/assets/yellow_tulip.gif" || plant.img == "/assets/pink_tulip.gif" || plant.img == "/assets/red_tulip.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=TULIP"> </iframe>
-        <% } else if (plant.img == "/assets/blackeyed_susan.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=RUHI2"> </iframe>
-        <% } else if (plant.img == "/assets/forget_me_knots.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=MYSC"> </iframe>
-        <% } else if (plant.img == "/assets/lavender.gif") {%>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=LAAN81"> </iframe>
-        <% } else if (plant.img == "/assets/red_rununculus.gif" || plant.img == "/assets/purple_rununculus.gif" || plant.ing == "/assets/red_rununculus.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=RASU4&photoID=rasu4_001_ahp.tif"> </iframe>
-        <% }  else if (plant.img == "/assets/crimson_poppy.gif" || plant.img == "/assets/orange_poppy.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=ESCA2#"> </iframe>
-        <% } else if (plant.img == "/assets/pansy.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=VIBI"> </iframe>
-        <% } else if (plant.img == "/assets/lily_of_the_valley.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=COMA7"> </iframe>
-        <% } else if (plant.img == "/assets/morning_glory.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=IPJA"> </iframe>
-        <% } else if (plant.img == "/assets/daffodil.gif") { %>
-          <iframe height="100%" width="100%" src="https://plants.usda.gov/core/profile?symbol=NARCI"> </iframe>
-        <% } %>
-      </section>
+
 
     <!-- js and jquery links -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

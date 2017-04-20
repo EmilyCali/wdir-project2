@@ -9,6 +9,13 @@ var $plantpics = $(".plantpic");
 //get watering feature
 var $water = $(".water");
 
+//get open second modal on plant show pages
+var $openPlantModal = $("#openPlantModal");
+//get modal on plant show pages
+var $plantModal = $("#plantModal");
+//get close button on plant show pages
+var $closePlantModal = $("#closePlantModal");
+
 
 //handlers ================================
 //when you click on the about this app link open the modal
@@ -19,6 +26,9 @@ var openModal = function() {
 var closeModal = function() {
   $modal.css("display", "none");
 };
+
+
+
 //function for fading out images
 //keep plant at opacity
 var wiltedPlants = function() {
@@ -29,6 +39,15 @@ var waterPlants = function() {
   $plantpics.removeClass("wilted");
 };
 
+
+//function for plant modal open
+var openPlantModal = function() {
+  $plantModal.css("display","block");
+};
+//function for plant modal close
+var closePlantModal = function() {
+  $plantModal.css("display", "none");
+};
 
 
 //listeners================================
@@ -41,3 +60,8 @@ $closeModal.on("click", closeModal);
 window.setTimeout(wiltedPlants, 10000);
 //watering on click call function
 $water.on("click", waterPlants);
+
+//grabbing open plant modal click to show
+$openPlantModal.on("click", openPlantModal);
+//grabbing close plant modal click to hide
+$closePlantModal.on("click", closePlantModal);
