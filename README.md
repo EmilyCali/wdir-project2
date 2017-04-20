@@ -46,13 +46,11 @@ I decided not to add a background to my site in part because I liked the more si
 
 
 <h2> Functionality </h2>
-<br />
 This application involves two Mongoose Schemas, one, for the gardens, and another for the plants that can be placed in the gardens. Both models require names, and can be given descriptions in various fields. The models are "relational" to an extent. The plants are copied to the garden plants array and all edits to the plants affect the array as well in a repeat function.
 <br />
 To enable more user friendly features the images of the flowers shake when hovered over to give the implication that they can be clicked. The links in the navigation area change color on hover and so do the buttons there. There is also an added feature on the show page for the plants that causes the flower to "wilt" or become more transparent, the plant can be brought back to life with the watering button. I had intended on this to be an interval or timeout that would work on each image as it was made- so if a flower was there it would wilt and stay wilted until watered and then wilt again. I could not figure out how to approach this with the dynamically created elements, when one changed they all did. I think if I were to do this I would need a setter and to retrieve the images via the array instead of just their classes. This would involve another keyvalue and there would need to be some kind of link somehow between that keyvalue and the wilting... I'd need to do some kind of route for just this but without clicking anything....
 
 <h2> APIs </h2>
-<br />
 I wanted to incorporate an API into my app and attempted to do so using the United States Department of Agriculture's data base. Unlike the movie API that we used in class to get movie posters, the USDA API had a strange transition on search parameters that I could not decipher and I was unable to find a way to grab the information from the page that I wanted. I worked around this by using an iframe element that would be filled with a certain page from the USDA site based on the image that was being shown on the plant show page. I turned this into a modal because having it on my page didn't really fit with the rest of my sites look.
 
 
