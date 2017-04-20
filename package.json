@@ -1,12 +1,18 @@
 {
   "name": "wdir-project2",
   "version": "1.0.0",
+  "engineStrict": true,
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.10"
+  },
   "description": "Web Development Immersive Project 2 CRUD CRAP application",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EmilyCali/wdir-project2.git"
@@ -23,10 +29,5 @@
     "express": "^4.15.2",
     "method-override": "^2.3.8",
     "mongoose": "^4.9.4"
-  },
-  "engineStrict": true,
-  "engines": {
-    "node": "6.10.0",
-    "npm": "3.10.10"
   }
 }

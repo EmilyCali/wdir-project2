@@ -12,6 +12,14 @@ During Unit 6 of the General Assembly course students learned about mongoDB and 
 <h2> The Idea </h2>
 In the week leading up the this assignment in mid April, my family has been gardening a lot. I decided that I would create an app where gardens could be made and plants could be put into them.
 
+<h2> Wire Framing </h2>
+<img src="/assets/IMG_9536.jpg">
+<br />
+<img src="/assets/IMG_9537.jpg">
+<br />
+<img src="/assets/IMG_9538.jpg">
+<br />
+
 <h2> The Approach </h2>
 I approached the assignment like the homework involving photographers and photos. Once I had a relationship working between the gardens and the plants I verified that my application was a full crud app for both models. I ran into some errors that resulted in me dropping the database a few times but once I had it running I set to altering the application to allow for asset images I drew and several other selection processes.
 
@@ -41,7 +49,7 @@ I chose colors for my site from both the defaults in MS paint, which I used to d
 
 I decided not to add a background to my site in part because I liked the more simplistic look and also because since I had to draw my flowers in MS Paint (photoshop and illustrator were not giving me the brushstroke pressure look) they do not have transparent backgrounds. I did attempt to make the bottom of them transparent to make a dirt patch for all the plants to appear to be growing out of but I was not able to make the plants rest at the absolute bottom of the page to allow for this and, with the responsive layout, they would most likely move out of place and not sit in the dirt at all.
 
- I drew sixteen flowers to choose from and set the sixteenth one as the default, in case a user does not actually select an image option from the drop down when creating a plant. The default flower is a dandelion, if you don't pic a plant then you get to have a weed grow in your garden.
+I drew sixteen flowers to choose from and set the sixteenth one as the default, in case a user does not actually select an image option from the drop down when creating a plant. The default flower is a dandelion, if you don't pic a plant then you get to have a weed grow in your garden.
  <br />
 
 
@@ -51,8 +59,12 @@ This application involves two Mongoose Schemas, one, for the gardens, and anothe
 To enable more user friendly features the images of the flowers shake when hovered over to give the implication that they can be clicked. The links in the navigation area change color on hover and so do the buttons there. There is also an added feature on the show page for the plants that causes the flower to "wilt" or become more transparent, the plant can be brought back to life with the watering button. I had intended on this to be an interval or timeout that would work on each image as it was made- so if a flower was there it would wilt and stay wilted until watered and then wilt again. I could not figure out how to approach this with the dynamically created elements, when one changed they all did. I think if I were to do this I would need a setter and to retrieve the images via the array instead of just their classes. This would involve another keyvalue and there would need to be some kind of link somehow between that keyvalue and the wilting... I'd need to do some kind of route for just this but without clicking anything....
 
 <h2> APIs </h2>
-I wanted to incorporate an API into my app and attempted to do so using the United States Department of Agriculture's data base. Unlike the movie API that we used in class to get movie posters, the USDA API had a strange transition on search parameters that I could not decipher and I was unable to find a way to grab the information from the page that I wanted. I worked around this by using an iframe element that would be filled with a certain page from the USDA site based on the image that was being shown on the plant show page. I turned this into a modal because having it on my page didn't really fit with the rest of my sites look.
+I wanted to incorporate an API into my app and attempted to do so using the United States Department of Agriculture's data base. Unlike the movie API that we used in class to get movie posters, the USDA API had a strange transition on search parameters that I could not decipher and I was unable to find a way to grab the information from the page that I wanted. I don't believe that the USDA API uses JSON. I worked around this by using an iframe element that would be filled with a certain page from the USDA site based on the image that was being shown on the plant show page. I turned this into a modal because having it on my page didn't really fit with the rest of my sites look.
 
+<h2> Next Steps </h2>
+If I have the opportunity and desire to come back to this I would like to create user sessions and to try and develop the game aspect a bit more. I also think it could be nice to have a feature that allows people to find where the plants are being sold in the area or learn about their area in regards to weather or growing conditions.
+
+I'd also like to work out validators. I have set names to required and was working on making sure no one could not enter a name or enter a name that had already been used but it kept breaking my site. 
 
 <h2> Resources </h2>
 <a href="https://expressjs.com/en/starter/static-files.html"> assets connections</a>

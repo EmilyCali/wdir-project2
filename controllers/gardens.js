@@ -10,7 +10,7 @@ var Plant = require("../models/plants.js");
 //index route
 router.get("/", function(request, response) {
   Garden.find({}, function(error, foundGardens){
-    console.log(error);
+    //console.log(error);
     //render garden page
     response.render("gardens/index.ejs", {
       gardens: foundGardens
@@ -30,7 +30,7 @@ router.get("/new", function(request, response) {
 router.post("/", function(request, response) {
   //add this thing to the garden item
   Garden.create(request.body, function(error, createdGarden) {
-    console.log(error);
+    //console.log(error);
     //go back to the gardens index
     response.redirect("/gardens");
   });
@@ -41,7 +41,7 @@ router.post("/", function(request, response) {
 router.get("/:id", function(request, response) {
   //find the garden that you clicked on
   Garden.findById(request.params.id, function(error, foundGarden) {
-    console.log(error);
+    //console.log(error);
     //go to the show page and have the content come from the id item
     response.render("gardens/show.ejs", {
       garden: foundGarden
@@ -54,7 +54,7 @@ router.get("/:id", function(request, response) {
 router.delete("/:id", function(request, response) {
   //find the garden and remove it from the database
   Garden.findByIdAndRemove(request.params.id, function(error, foundGarden) {
-    console.log(error);
+    //console.log(error);
     //put the plants from it into an array
     var plantIds = [];
     //for each of those plants
@@ -68,7 +68,7 @@ router.delete("/:id", function(request, response) {
       }
     },
     function(error, data) {
-      console.log(error);
+      //console.log(error);
       //go back to the index for gardens
       response.redirect("/gardens");
       }
@@ -81,7 +81,7 @@ router.delete("/:id", function(request, response) {
 router.get("/:id/edit", function(request, response) {
   //enable the edit page to know which thing it is editing
   Garden.findById(request.params.id, function(error, foundGarden) {
-    console.log(error);
+    //console.log(error);
     //render the edit page
     response.render("gardens/edit.ejs", {
       garden: foundGarden
