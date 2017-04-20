@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ribeye+Marrow" rel="stylesheet">
   </head>
   <body>
+    <!-- modal -->
     <section id="plantModal">
       <!-- create an iframe depending on the image shown, connect to USDA data pages -->
       <div id="plantModalFrame">
@@ -36,13 +37,15 @@
           <iframe src="https://plants.usda.gov/core/profile?symbol=IPJA"> </iframe>
         <% } else if (plant.img == "/assets/daffodil.gif") { %>
           <iframe src="https://plants.usda.gov/core/profile?symbol=NARCI"> </iframe>
+        <% } else if (plant.img == "/assets/dandelion.gif") { %>
+          <iframe src="https://plants.usda.gov/core/profile?symbol=TARAX"> </iframe>
         <% } %>
         <a id="closePlantModal" href="#"> Close </a>
       </div>
       </section>
 
     <header>
-      <a id="openPlantModal" href="#"> Learn Facts! </a>
+      <a id="openPlantModal" class="shake" href="#"> Learn Facts! </a>
       <h1> Take a Closer Look </h1>
       <nav>
         <a href="/"> Home </a>

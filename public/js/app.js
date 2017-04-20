@@ -57,7 +57,7 @@ $openModal.on("click", openModal);
 $closeModal.on("click", closeModal);
 
 //$plantpics.fadeTo(2000, 0.4).delay(4000);
-window.setTimeout(wiltedPlants, 10000);
+window.setTimeout(wiltedPlants, 3000);
 //watering on click call function
 $water.on("click", waterPlants);
 
