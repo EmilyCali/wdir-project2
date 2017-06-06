@@ -25,7 +25,7 @@
     <main>
       <form action="/plants/<%=plant._id%>?_method=PUT" method="POST">
         <label> Garden:</label>
-        <select name="gardenId">
+        <select name="gardenId" required>
           <% for (var i = 0; i < gardens.length; i++) {%>
             <option value="<%=gardens[i]._id%>"
               <% if (gardens[i]._id.toString() === plantGarden._id.toString()) {%>
@@ -38,7 +38,7 @@
         </select>
         <!-- you also should do this for colors and only have a few available for each plant, use if statements to make this work -->
         <br />
-        <label> Name: </label> <input type="text" name="name" value="<%=plant.name%>"/>
+        <label> Name: </label> <input type="text" name="name" value="<%=plant.name%>" required/>
         <br />
         <label>Likes:</label> <input type="text" name="likes" value="<%=plant.likes%>" />
         <br />

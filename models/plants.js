@@ -6,8 +6,8 @@ var Garden = require("./gardens.js");
 
 //plant schema
 var plantSchema = new Schema({
-  garden: String,
-  name: ({type: String, unique: true, required: true}),
+  garden: ({type: String, required: true}),
+  name: ({type: String, unique: true, required: true, default: "Chloro"}),
   img: ({type:String, default: "/assets/dandelion.gif"}), //need to make this required or set a default
   color: String,
   likes: String, //sunlight shade water clay rocks

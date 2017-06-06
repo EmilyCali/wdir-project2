@@ -24,14 +24,14 @@
 
     <main>
       <form action="/plants" method="POST">
-        <label>Garden:</label> <select name="garden">
+        <label>Garden:</label> <select name="garden" required>
           <% for (var i = 0; i < gardens.length; i++) {%>
             <option value="<%=gardens[i].name%>"><%=gardens[i].name%>
             </option>
           <%}%>
         </select>
         <br />
-        <label> Name: </label> <input type="text" name="name" />
+        <label> Name: </label> <input type="text" name="name" required />
         <br />
         <label> Flower: </label>
         <select name="img">
