@@ -28,12 +28,16 @@ router.get("/new", function(request, response) {
 
 //post new
 router.post("/", function(request, response) {
-  //add this thing to the garden item
-  Garden.create(request.body, function(error, createdGarden) {
-    //console.log(error);
-    //go back to the gardens index
-    response.redirect("/gardens");
-  });
+  if (request.body.name !== "" || request.body.name !== null || request.body.name.length !== 0) {
+    //add this thing to the garden item
+    Garden.create(request.body, function(error, createdGarden) {
+      //console.log(error);
+      //go back to the gardens index
+      response.redirect("/gardens");
+    });
+  } else {
+    response.render("You must enter a name!");
+  }
 });
 
 
