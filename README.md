@@ -1,7 +1,8 @@
 # wdir-project2
 Web Development Immersive Project 2 CRUD CRAP application
 
-<a href="https://safe-chamber-59689.herokuapp.com/"> link to live page </a>
+<a href="https://safe-chamber-59689.herokuapp.com/"> link to live page </a>however, this page may be down due to outdated resources.
+
 
 <h2> Project Requirements </h2>
 Project Two requirements: create a full stack application using two models and mvc folder structure. Complete with Node.js, Express, Mongoose and EJS with RESTFUL routes.
